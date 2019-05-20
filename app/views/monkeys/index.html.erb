@@ -1,0 +1,12 @@
+<h1>Liste des monkeys</h1>
+
+<ul>
+  <% @monkeys.each do |monkey| %>
+    <li>
+      <%= monkey.name %> - <%= monkey.speciality %>
+      <%= link_to "Plus de détails", monkey_path(monkey) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a monkey !", new_monkey_path %>

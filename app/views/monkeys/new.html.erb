@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Add a new monkey</h1>
+
+
+  <%= simple_form_for @monkey do |f| %>
+    <%= f.input :name%>
+    <%= f.input :speciality%>
+    <%= f.input :description%>
+    <%= f.input :price%>
+    <%= f.input :picture%>
+
+    <%= f.button :submit %>
+  <% end %>
+</div>
