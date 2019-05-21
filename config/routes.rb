@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :bookings, shallow: true, only: [:show, :new, :create, :destroy]
   end
 
-  get '/profile', to: 'dashboard#profile', as: :profile
+  get '/profile', to: 'dashboards#profile', as: :profile
 
 
 
