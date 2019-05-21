@@ -5,7 +5,7 @@
   <% @monkeys.each do |monkey| %>
     <div class="col-4">
       <div class="card-monkey">
-        <img src=<%= monkey.picture %>>
+        <%= cl_image_tag monkey.picture %>
         <div class="card-monkey-infos">
           <div>
             <h2><%= monkey.name %></h2>

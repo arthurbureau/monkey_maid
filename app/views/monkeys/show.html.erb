@@ -1,6 +1,6 @@
 <h1><%= @monkey.name %></h1>
 
-<img src=<%= @monkey.picture %> alt='<%= @monkey.name %>'>
+<%= cl_image_tag @monkey.picture, height: 300, width: 400, crop: :fill %>
 
 <p>Speciality : <%= @monkey.speciality %></p>
 <p>Description : <%= @monkey.description %></p>
