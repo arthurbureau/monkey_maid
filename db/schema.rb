@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_05_20_140323) do
     t.bigint "user_id"
     t.date "checkin"
     t.date "checkout"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["monkey_id"], name: "index_bookings_on_monkey_id"

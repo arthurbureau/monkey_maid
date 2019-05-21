@@ -5,17 +5,14 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @monkey = Monkey.find(params[:monkey_id])
     @booking = Booking.new
     @booking.user = current_user
   end
 
   def create
-    @monkey = Monkey.find(params[:monkey_id])
     @booking = Booking.new(set_booking_params)
     @booking.user = current_user
     @booking.monkey = @monkey
-    @booking.status = 0
 
     if @booking.save
       redirect_to profile_path
@@ -28,7 +25,7 @@ class BookingsController < ApplicationController
   private
 
   def find_monkey
-    @booking = Booking.find(params[:id])
+    @monkey = Monkey.find(params[:monkey_id])
   end
 
   def set_booking_params
