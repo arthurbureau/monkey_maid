@@ -1,0 +1,29 @@
+<h1>My Dashboard</h1>
+
+<h2> My Monkey List</h2>
+  <ul>
+    <% current_user.monkeys.each do |my_monkey| %>
+    <li>
+        <%= my_monkey.name %>
+    </li>
+    <% end %>
+  </ul>
+
+<h2> Next Bookings </h2>
+
+<% if @number_of_bookings != 0 %>
+  <p>Your next bookings are :</p>
+  <ul>
+      <% current_user.bookings.each do |my_booking| %>
+      <li>
+          Renter: <%= my_booking.user.first_name %>
+      </li>
+      <% end %>
+    </ul>
+<% else %>
+  <p>You don't have any reservation. Start to plan some. <%= link_to root_path %></p>
+<% end %>
+
+
+
+
