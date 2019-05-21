@@ -1,12 +1,28 @@
-<h1>Liste des monkeys</h1>
+<div class="container">
+  <h1>Liste des monkeys</h1>
 
-<ul>
+  <div class="row">
   <% @monkeys.each do |monkey| %>
-    <li>
-      <%= monkey.name %> - <%= monkey.speciality %>
-      <%= link_to "Plus de détails", monkey_path(monkey) %>
-    </li>
+    <div class="col-4">
+      <div class="card-monkey">
+        <img src=<%= monkey.picture %>>
+        <div class="card-monkey-infos">
+          <div>
+            <h2><%= monkey.name %></h2>
+            <p><%= monkey.speciality %></p>
+          </div>
+          <h2 class="card-monkey-pricing"><%= monkey.price %> €</h2>
+          <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-monkey-user avatar-bordered"/>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+  </div>
+</div>
+
+
 
 <%= link_to "Add a monkey !", new_monkey_path, class: "btn btn-primary" %>
+
+
+
