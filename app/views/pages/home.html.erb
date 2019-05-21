@@ -1,23 +1,27 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471421455671-b9e8a4114185?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" alt="Monkey);">
 
-  <% if user_signed_in? %>
-    <%= link_to "Go to dashboard", profile_path, class: "btn btn-outline-light" %>
-      <% else %>
-      <div class="home-btn">
-         <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light m-3" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light m-3" %>
-      </div>
-  <% end %>
-<div class="welcome-container">
-  <h1>Welcome in Monkey Maid </h1>
-  <p>Change your life, rent a monkey!</p>
-</div>
+    <div class="home-btn">
+      <% if user_signed_in? %>
+        <%= link_to "Go to dashboard", profile_path, class: "btn btn-outline-light" %>
+          <% else %>
 
-    <div class="seeing-list">
-    <p>See the list</p>
-    <a href="#monkey-list"><i class="text-white fas fa-2x fa-chevron-down pulse"></i></a>
-  </div>
+             <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light m-3" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light m-3" %>
+      <% end %>
+    </div>
+
+    <div class="welcome-container">
+      <h1>Welcome in Monkey Maid </h1>
+      <br>
+      <br>
+      <p>Change your life, rent a monkey!</p>
+    </div>
+
+    <div class="seeing-list w-100 text-center">
+      <!-- <p>See the list</p> -->
+      <a href="#monkey-list"><i class="text-white fas fa-2x fa-chevron-down pulse"></i></a>
+   </div>
 
 </div>
 
