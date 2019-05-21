@@ -1,8 +1,70 @@
-<div class="container">
-<h1>Pages#home</h1>
 
-<h1>Hello !</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471421455671-b9e8a4114185?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" alt="Monkey);">
+
+    <div class="home-btn">
+      <% if user_signed_in? %>
+        <%= link_to "Go to dashboard", profile_path, class: "btn btn-outline-light" %>
+          <% else %>
+
+             <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light m-3" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light m-3" %>
+      <% end %>
+    </div>
+
+    <div class="welcome-container">
+      <h1>Welcome in Monkey Maid </h1>
+      <br>
+      <br>
+      <p>Change your life, rent a monkey!</p>
+    </div>
+
+    <div class="seeing-list w-100 text-center">
+      <!-- <p>See the list</p> -->
+      <a href="#monkey-list"><i class="text-white fas fa-2x fa-chevron-down pulse"></i></a>
+   </div>
+
+</div>
+
+<div id="monkey-list" class="container">
+<h1 class="my-5">Monkeys List</h1>
+<div class="row mb-5">
+  <div class="col-4">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1523666113224-afb092ecf61e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
+  Nannies
+</div></div>
+<div class="col-4">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1548323479-3b58f4219881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+  Gardeners
+</div></div>
+<div class="col-4">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552813139-9c61c80b689f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80)">
+  Chefs
+</div></div>
+<div class="col-4">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1557978556-b33c86cbeeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80)">
+  Musicians
+</div></div>
+<div class="col-4">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1525013069870-2730c32afccb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+  Clowns
+</div></div>
+<div class="col-4">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552791060-33c6bb93f7c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+  Killers
+</div>
+</div>
+</div>
 
 
-<img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80" alt="Monkey" style='width: 300px'>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Monkey Maid is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
 </div>
