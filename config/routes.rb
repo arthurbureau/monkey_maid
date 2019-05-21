@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'dashboards/profile'
+
   root to: 'pages#home'
 
   devise_for :users
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :bookings, shallow: true, only: [:show, :new, :create, :destroy]
   end
 
-  get '/profile', to: 'dashboards#profile', as: :profile
+  get '/profile', to: 'users#profile', as: :profile
 
 
 

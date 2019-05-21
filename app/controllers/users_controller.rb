@@ -1,4 +1,4 @@
-class DashboardsController < ApplicationController
+class UsersController < ApplicationController
   def profile
     method_name
   end
