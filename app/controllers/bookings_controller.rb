@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking.monkey = @monkey
 
     if @booking.save
+      flash[:notice] = "Yay! 🎉 you have successfully rent a monkey."
       redirect_to profile_path
       # Ajouter une alerte pour confirmer que le booking est ajoute
     else

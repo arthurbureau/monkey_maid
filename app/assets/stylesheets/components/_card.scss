@@ -50,30 +50,26 @@
 
 .card {
   margin: 10px;
-
 }
 
-.card-img-top {
-
+.card-image-top {
   height: 150px;
   object-fit: cover;
   background-position: center;
 }
-
 
 .card-booking {
   overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+
   margin: 10px
 }
 
 .card-booking img {
   height: 100%;
-  width: 120px;
+  width: 200px;
   object-fit: cover;
 }
 
@@ -92,5 +88,16 @@
 }
 
 .card-booking .card-booking-infos {
-  padding: 16px;
+  padding: 32px;
+}
+
+.card-booking-left {
+  display: flex;
+  align-items: center;
+}
+
+.card-booking-right {
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
 }
