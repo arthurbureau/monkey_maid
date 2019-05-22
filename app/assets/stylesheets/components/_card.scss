@@ -1,8 +1,17 @@
 .card-monkey {
+  position: relative;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px 0;
+}
+
+.link-monkey{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .card-monkey > img {

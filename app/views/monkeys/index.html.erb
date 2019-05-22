@@ -5,6 +5,7 @@
   <% @monkeys.each do |monkey| %>
     <div class="col-4">
       <div class="card-monkey">
+       <%= link_to "", monkey_path(monkey), class: "link-monkey" %>
         <%= cl_image_tag monkey.picture %>
         <div class="card-monkey-infos">
           <div>
@@ -22,7 +23,7 @@
 
 
 
-<%= link_to "Add a monkey !", new_monkey_path, class: "btn btn-primary" %>
+<%= link_to "Add a monkey !", new_monkey_path, class: "addingmonkey btn btn-success btn-lg btn-block" %>
 
 
 
