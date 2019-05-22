@@ -3,11 +3,11 @@
 
   <div class='w-100 text-center my-5'>
     <%= cl_image_tag current_user.avatar, class: "avatar-big", alt: "avatar-big" %>
-    <h2> Hello <%= current_user.first_name %> ! </h2>
-  </div>
+    <h2 class='my-3'> Hello <%= current_user.first_name %> ! </h2>
 
 
-    <h2> Your Monkeys </h2>
+
+    <h2 class='p-3 border-top'> Your Monkeys </h2>
     <% if @number_of_monkeys != 0 %>
       <div class="row">
         <div class="card-group">
@@ -32,24 +32,27 @@
       </div>
     <% else %>
       <p>You don't have any monkeys ! </p>
-      <p><%= link_to "Start to add one", new_monkey_path, class: 'btn btn-primary' %></p>
+      <p><%= link_to "Start to add one", new_monkey_path, class: 'btn btn-info' %></p>
     <% end %>
 
 
 
-  <h2> Your Bookings </h2>
+  <h2 class='p-3 border-top' > Your Bookings </h2>
   <% if @number_of_bookings != 0 %>
-    <p>Your next bookings are :</p>
         <% current_user.bookings.each do |my_booking| %>
 
-          <div class="card-booking">
-            <img src="<%= my_booking.monkey.picture %>">
-            <div class="card-booking-infos">
-              <h2><%= my_booking.monkey.name %></h2>
-              <p><%= my_booking.monkey.speciality %></p>
-              <p>Booking from <%= my_booking.checkin %> to <%= my_booking.checkout %></p>
-              <p><%= my_booking.monkey.price %> € /day </p>
+          <div class="card-booking d-flex justify-content-between align-items-center">
+            <div class="card-booking-left">
+              <img src="<%= my_booking.monkey.picture %>">
+              <div class="card-booking-infos">
+                <h3><%= my_booking.monkey.name %></h3>
+                <p><%= my_booking.monkey.speciality %></h6>
 
+              </div>
+            </div>
+            <div class="card-booking-right">
+              <h3><%= my_booking.monkey.price %> € /day </h3>
+              <p>Booking from <%= my_booking.checkin %> to <%= my_booking.checkout %></p>
             </div>
           </div>
 
@@ -58,7 +61,8 @@
      </div>
   <% else %>
     <p>You don't have any reservation ! </p>
-    <p><%= link_to "Start to rent a monkey !",monkeys_path, class: 'btn btn-primary' %></p>
+    <p><%= link_to "Start to rent a monkey !",monkeys_path, class: 'btn btn-info' %></p>
   <% end %>
 
+</div>
 </div>
