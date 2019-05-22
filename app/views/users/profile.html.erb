@@ -9,13 +9,27 @@
 
     <h2> Your Monkeys </h2>
     <% if @number_of_monkeys != 0 %>
-      <ul>
-        <% current_user.monkeys.each do |my_monkey| %>
-        <li>
-            <%= my_monkey.name %>
-        </li>
-        <% end %>
-      </ul>
+      <div class="row">
+        <div class="card-group">
+          <% current_user.monkeys.each do |my_monkey| %>
+            <div class="col-3">
+              <div class="card">
+                <div class="card-top">
+                  <img class="card-img-top" src="<%= my_monkey.picture %>" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-text"><%= my_monkey.name %></h5>
+                </div>
+                <% if my_monkey.bookings.count > 0 %>
+                  <div class="card-footer">
+                  <small class="text-muted">Next booking : <%= my_monkey.bookings.last.checkin %></small>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% else %>
       <p>You don't have any monkeys ! </p>
       <p><%= link_to "Start to add one", new_monkey_path, class: 'btn btn-primary' %></p>
@@ -26,13 +40,22 @@
   <h2> Your Bookings </h2>
   <% if @number_of_bookings != 0 %>
     <p>Your next bookings are :</p>
-    <ul>
         <% current_user.bookings.each do |my_booking| %>
-        <li>
-            Renter: <%= my_booking.user.first_name %>
-        </li>
+
+          <div class="card-booking">
+            <img src="<%= my_booking.monkey.picture %>">
+            <div class="card-booking-infos">
+              <h2><%= my_booking.monkey.name %></h2>
+              <p><%= my_booking.monkey.speciality %></p>
+              <p>Booking from <%= my_booking.checkin %> to <%= my_booking.checkout %></p>
+              <p><%= my_booking.monkey.price %> € /day </p>
+
+            </div>
+          </div>
+
+
         <% end %>
-      </ul>
+     </div>
   <% else %>
     <p>You don't have any reservation ! </p>
     <p><%= link_to "Start to rent a monkey !",monkeys_path, class: 'btn btn-primary' %></p>
