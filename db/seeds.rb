@@ -11,12 +11,27 @@ Booking.destroy_all
 Monkey.destroy_all
 User.destroy_all
 
+avatar1 = 'https://res.cloudinary.com/dzh1pkhi5/image/upload/v1558534401/P1070601_kryzpi.jpg'
+avatar2 = 'https://res.cloudinary.com/dzh1pkhi5/image/upload/v1558534401/P1070586_pkcnp9.jpg'
+avatar3 = 'https://res.cloudinary.com/dzh1pkhi5/image/upload/v1558534402/P1070863-Modifier_gamgfx.jpg'
+avatar4 = 'https://res.cloudinary.com/dzh1pkhi5/image/upload/v1558534403/P1080047-Modifier_uuhjav.jpg'
 
-user_renter1 = User.create(first_name: 'Alexandrine', last_name: 'BB', email: 'alexandrine@gmail.com', password: 'xxxxxxx', avatar:"")
-user_renter2 = User.create(first_name: 'Romann', last_name: 'DD', email: 'romann@gmail.com', password: 'xxxxxxx', avatar:"")
-user_owner1 = User.create(first_name: 'Anne-So', last_name: 'Ducamin', email: 'anneso@gmail.com', password: 'xxxxxxx', avatar:"")
-user_owner2 = User.create(first_name: 'Arthur', last_name: 'Bureau', email: 'arthur@gmail.com', password: 'xxxxxxx', avatar: "")
+user_renter1 = User.new(first_name: 'Kurt', last_name: 'BB', email: 'kurt@gmail.com', password: 'xxxxxxx')
+user_renter2 = User.new(first_name: 'Say', last_name: 'DD', email: 'say@gmail.com', password: 'xxxxxxx')
+user_owner1 = User.new(first_name: 'Manon', last_name: 'Ducamin', email: 'manon@gmail.com', password: 'xxxxxxx')
+user_owner2 = User.new(first_name: 'Moranne', last_name: 'Bureau', email: 'moranne@gmail.com', password: 'xxxxxxx')
 
+user_renter1.remote_avatar_url = avatar1
+user_renter1.save
+
+user_renter2.remote_avatar_url = avatar2
+user_renter2.save
+
+user_owner1.remote_avatar_url = avatar3
+user_owner1.save
+
+user_owner2.remote_avatar_url = avatar4
+user_owner2.save
 
 url1 = 'https://cdn.pixabay.com/photo/2017/09/15/23/02/monkey-2753916_960_720.jpg'
 url2 = 'https://images.unsplash.com/photo-1556297079-af2d8e7de8fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
@@ -83,4 +98,8 @@ monkey13.save
 monkey14.save
 monkey15.save
 
-booking1 = Booking.create(monkey: monkey1, user: user_renter1, checkin: Date.current - 2, checkout: Date.current, status: 2)
+booking1 = Booking.create(monkey: monkey10, user: user_renter1, checkin: Date.current - 2, checkout: Date.current, status: 2)
+booking2 = Booking.create(monkey: monkey1, user: user_renter1, checkin: Date.current - 2, checkout: Date.current, status: 2)
+booking3 = Booking.create(monkey: monkey5, user: user_renter2, checkin: Date.current - 2, checkout: Date.current, status: 2)
+booking4 = Booking.create(monkey: monkey6, user: user_renter2, checkin: Date.current - 2, checkout: Date.current, status: 2)
+booking5 = Booking.create(monkey: monkey8, user: user_owner1, checkin: Date.current - 2, checkout: Date.current, status: 2)
