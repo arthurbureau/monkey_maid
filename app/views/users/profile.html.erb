@@ -6,16 +6,15 @@
     <h2 class='my-3'> Hello <%= current_user.first_name %> ! </h2>
 
 
-
     <h2 class='p-3 border-top'> Your Monkeys </h2>
     <% if @number_of_monkeys != 0 %>
       <div class="row">
-        <div class="card-group">
+        <div class="card-group mb-3">
           <% current_user.monkeys.each do |my_monkey| %>
             <div class="col-3">
               <div class="card">
                 <div class="card-top">
-                  <img class="card-img-top" src="<%= my_monkey.picture %>" alt="Card image cap">
+                  <img class="card-img-top card-image-top" src="<%= my_monkey.picture %>" alt="Card image cap">
                 </div>
                 <div class="card-body">
                   <h5 class="card-text"><%= my_monkey.name %></h5>
