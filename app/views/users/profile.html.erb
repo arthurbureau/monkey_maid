@@ -9,25 +9,25 @@
     <h2 class='p-3 border-top'> Your Monkeys </h2>
     <% if @number_of_monkeys != 0 %>
       <div class="row">
-        <div class="card-group mb-3">
           <% current_user.monkeys.each do |my_monkey| %>
             <div class="col-3">
-              <div class="card">
-                <div class="card-top">
-                  <img class="card-img-top card-image-top" src="<%= my_monkey.picture %>" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-text"><%= my_monkey.name %></h5>
-                </div>
-                <% if my_monkey.bookings.count > 0 %>
-                  <div class="card-footer">
-                  <small class="text-muted">Next booking : <%= my_monkey.bookings.last.checkin %></small>
+              <div class="card-group mb-3">
+                <div class="card">
+                  <div class="card-top">
+                    <img class="card-img-top card-image-top" src="<%= my_monkey.picture %>" alt="Card image cap">
                   </div>
-                <% end %>
+                  <div class="card-body">
+                    <h5 class="card-text"><%= my_monkey.name %></h5>
+                  </div>
+                  <% if my_monkey.bookings.count > 0 %>
+                    <div class="card-footer">
+                    <small class="text-muted">Next booking : <%= my_monkey.bookings.last.checkin %></small>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
           <% end %>
-        </div>
       </div>
     <% else %>
       <p>You don't have any monkeys ! </p>
