@@ -12,8 +12,9 @@ Monkey.destroy_all
 User.destroy_all
 
 
-user_renter1 = User.create(first_name: 'Alexandrine', last_name: 'Ducamin', email: 'alexandrine@gmail.com', password: 'xxxxxxx', avatar:"")
-user_owner1 = User.create(first_name: 'Anne-Sophie', last_name: 'Ducamin', email: 'anneso@gmail.com', password: 'xxxxxxx', avatar:"")
+user_renter1 = User.create(first_name: 'Alexandrine', last_name: 'BB', email: 'alexandrine@gmail.com', password: 'xxxxxxx', avatar:"")
+user_renter2 = User.create(first_name: 'Romann', last_name: 'DD', email: 'romann@gmail.com', password: 'xxxxxxx', avatar:"")
+user_owner1 = User.create(first_name: 'Anne-So', last_name: 'Ducamin', email: 'anneso@gmail.com', password: 'xxxxxxx', avatar:"")
 user_owner2 = User.create(first_name: 'Arthur', last_name: 'Bureau', email: 'arthur@gmail.com', password: 'xxxxxxx', avatar: "")
 
 
