@@ -18,7 +18,7 @@ class MonkeysController < ApplicationController
     @monkey.user = @user
     if @monkey.save
       flash[:notice] = "Yay! 🎉 you have successfully add a new monkey."
-      redirect_to monkeys_path
+      redirect_to profile_path
       # Ajouter une alerte pour confirmer que le monkey est ajoute
     else
       render :new
