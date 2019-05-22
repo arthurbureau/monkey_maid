@@ -9,7 +9,7 @@
 
   <%= simple_form_for @monkey do |f| %>
     <%= f.input :name%>
-    <%= f.input :speciality, collection: User::SPECIALITY%> <!-- ajouter liste déroulante -->
+    <%= f.input :speciality, collection: Monkey::SPECIALITY%> <!-- ajouter liste déroulante -->
     <%= f.input :description %>
     <%= f.input :price%>
     <%= f.input :picture%>

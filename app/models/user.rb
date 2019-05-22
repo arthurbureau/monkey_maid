@@ -9,5 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  SPECIALITY = ["Nannie", "Gardener", "Chef", "Singer", "Clown", "Killer"]
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :avatar, presence: true
 end
