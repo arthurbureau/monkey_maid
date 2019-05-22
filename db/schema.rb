@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_05_20_140323) do
     t.bigint "user_id"
     t.date "checkin"
     t.date "checkout"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["monkey_id"], name: "index_bookings_on_monkey_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_05_20_140323) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
