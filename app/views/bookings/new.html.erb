@@ -1,12 +1,31 @@
+<div class="image-background-general">
+
 <div class="container">
-  <h1>Formulaire nouveau booking</h1>
+  <div class="monkey-form">
+  <div class="row justify-content-center">
+  <div class="col-4 p-3 m-3 bg-light">
+
+  <h2>Book a Monkey</h2>
+<br>
+<br>
     <p>Renter : <%= current_user.first_name %></p>
     <p>Monkey : <%= @monkey.name  %></p>
     <p>Owner : <%= @monkey.user.first_name  %></p>
 
     <%= simple_form_for [@monkey, @booking] do |f| %>
+    <br>
     <%= f.input :checkin%>
+    <br>
     <%= f.input :checkout%>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <br>
+    <br>
+    <br>
+    <%= f.button :submit, class: "btn btn-success btn-lg btn-block" %>
+    <br>
   <% end %>
+
+  </div>
+  </div>
+  </div>
+  </div>
 </div>

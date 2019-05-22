@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  SPECIALITY = ["Nannie", "Gardener", "Chef", "Singer", "Clown", "Killer"]
 end
