@@ -61,9 +61,14 @@
   margin: 20px 5px;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Permanent marker', cursive;
   text-align: center;
+
+}
+
+p {
+   color: #3b302a;
 }
 
 .footer {
@@ -92,4 +97,3 @@ h1 {
 .footer .fa-heart {
   color: #D23333;
 }
-
