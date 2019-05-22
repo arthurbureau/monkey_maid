@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-
+Booking.destroy_all
+Monkey.destroy_all
 
 
 user_renter = User.create(first_name: 'Anne-Sophie', last_name: 'Ducamin', email: 'anneso@gmail.com', password: 'xxxxxxx')
