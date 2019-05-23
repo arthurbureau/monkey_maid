@@ -61,16 +61,22 @@
               <div class="card-booking-infos">
                 <h3><%= my_booking.monkey.name %></h3>
                 <p><%= my_booking.monkey.speciality %></h6>
-
               </div>
             </div>
             <div class="card-booking-right">
               <h3><%= my_booking.monkey.price %> € /day </h3>
               <p>Booking from <%= my_booking.checkin %> to <%= my_booking.checkout %></p>
             </div>
+
+              <div class="card-righter d-flex justify-content-around p-0">
+                <div class="card-righter-delete">
+                  <%= link_to booking_path(my_booking), method: :delete do%>
+                    <p class="card-text"><i class="fas fa-trash-alt"></i></p>
+                  <% end %>
+                </div>
+              </div>
+
           </div>
-
-
         <% end %>
      </div>
   <% else %>

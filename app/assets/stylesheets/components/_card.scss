@@ -141,3 +141,19 @@
 
   }
 }
+
+.card-righter-delete {
+  height: 100%;
+  padding: 50px;
+  &:hover {
+    background-color: rgba(192,0,0, 0.3);
+    // background-color: #ffa06f;
+  }
+}
+
+.card-righter {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+
