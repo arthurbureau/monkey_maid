@@ -25,9 +25,33 @@ class MonkeysController < ApplicationController
     end
   end
 
+  def edit
+ @monkey = Monkey.find(params[:id])
+    if current_user == @monkey.user
+    else
+       flash[:alert] = "Sorry, you are not authorized to modified the monkey"
+       redirect_to monkeys_path
+    end
+  end
+
+  def update
+    @monkey = Monkey.find(params[:id])
+    if @monkey.update(set_monkey_params)
+      flash[:notice] = "Yay! 🎉 you have successfully udpate your monkey."
+      redirect_to profile_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @monkey = Monkey.find(params[:id])
+    @monkey.destroy
+  end
+
   private
 
   def set_monkey_params
-    params.require(:monkey).permit(:name, :speciality, :description, :price, :picture)
+    params.require(:monkey).permit(:name, :speciality, :description, :price, :picture, :address)
   end
 end
