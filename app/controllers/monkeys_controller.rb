@@ -2,11 +2,12 @@ class MonkeysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @monkeys = Monkey.all
-    @monkeys = Monkey.where.not(latitude: nil, longitude: nil)
-    @markers = @monkeys.map do |monkey|
+    @geolocalized_monkeys = Monkey.where.not(latitude: nil, longitude: nil)
+
+    @markers = @geolocalized_monkeys.map do |flat|
       {
-        lat: monkey.latitude,
-        lgn: monkey.longitude,
+        lat: flat.latitude,
+        lng: flat.longitude
       }
     end
   end
