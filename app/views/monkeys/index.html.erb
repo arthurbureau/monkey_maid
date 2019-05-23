@@ -1,5 +1,5 @@
 
-
+<div class="main-container">
 <div class="container my-3">
 
   <h1>Monkeys List</h1>
@@ -24,10 +24,6 @@
   </div>
 </div>
 
-
-
-<%= link_to "Add a monkey !", new_monkey_path, class: "addingmonkey btn btn-success btn-lg btn-block" %>
-
 <div
   id="map"
   style="width: 100%;
@@ -35,3 +31,9 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+</div>
+
+
+
+
+<%= link_to "Add a monkey !", new_monkey_path, class: "addingmonkey btn btn-success btn-lg btn-block" %>

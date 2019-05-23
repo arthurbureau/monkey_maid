@@ -97,3 +97,17 @@ p {
 .footer .fa-heart {
   color: #D23333;
 }
+
+.main-container {
+  display: flex;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.card-monkey {
+  flex-grow: 1;
+}
