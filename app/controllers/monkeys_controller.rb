@@ -26,11 +26,11 @@ class MonkeysController < ApplicationController
   end
 
   def edit
- @monkey = Monkey.find(params[:id])
+    @monkey = Monkey.find(params[:id])
     if current_user == @monkey.user
     else
-       flash[:alert] = "Sorry, you are not authorized to modified the monkey"
-       redirect_to monkeys_path
+      flash[:alert] = "Sorry, you are not authorized to modified the monkey"
+      redirect_to monkeys_path
     end
   end
 
@@ -46,7 +46,14 @@ class MonkeysController < ApplicationController
 
   def destroy
     @monkey = Monkey.find(params[:id])
-    @monkey.destroy
+    if current_user == @monkey.user
+      @monkey.destroy
+      flash[:alert] = "Congrats, you have deleted the monkey"
+      redirect_to profile_path
+    else
+      flash[:alert] = "Sorry, you are not authorized to modified the monkey"
+      redirect_to monkey_path(@monkey)
+    end
   end
 
   private
