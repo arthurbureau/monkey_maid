@@ -27,11 +27,16 @@
                           <p class="card-text"><i class="far fa-edit"></i></p>
                       <% end %>
                     </div>
-                    <div class="card-footer-delete">
-                      <%= link_to monkey_path(my_monkey), method: :delete do%>
-                        <p class="card-text"><i class="fas fa-trash-alt"></i></p>
-                      <% end %>
-                    </div>
+
+                  <div class="card-footer-delete" id="alert-delete-monkey">
+                     <i class="fas fa-trash-alt" ></i>
+                      <%= link_to "", monkey_path(my_monkey), method: :delete, id: "delete-link", class: "hidden" %>
+                  </div>
+
+
+
+
+
                   </div>
 
                   <% if my_monkey.bookings.count > 0 %>
@@ -86,3 +91,5 @@
 
 </div>
 </div>
+
+
