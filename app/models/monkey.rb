@@ -2,7 +2,7 @@ class Monkey < ApplicationRecord
 
   SPECIALITY = ["Nannie", "Gardener", "Chef", "Singer", "Clown", "Killer"]
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
 
   mount_uploader :picture, PhotoUploader
