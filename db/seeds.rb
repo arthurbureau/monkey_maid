@@ -8,6 +8,7 @@
 
 puts "Start of seed !!"
 
+
 Booking.destroy_all
 Monkey.destroy_all
 User.destroy_all
