@@ -1,29 +1,88 @@
-<h1>My Dashboard</h1>
+<div class="container">
 
-<h2> My Monkey List</h2>
-  <ul>
-    <% current_user.monkeys.each do |my_monkey| %>
-    <li>
-        <%= my_monkey.name %>
-    </li>
+
+  <div class='w-100 text-center my-5'>
+    <%= cl_image_tag current_user.avatar, class: "avatar-big", alt: "avatar-big" %>
+    <h2 class='my-3'> Hello <%= current_user.first_name %> ! </h2>
+
+
+    <h2 class='p-3 border-top'> Your Monkeys </h2>
+    <% if @number_of_monkeys != 0 %>
+      <div class="row">
+          <% current_user.monkeys.each do |my_monkey| %>
+            <div class="col-3">
+              <div class="card-group mb-3">
+                <div class="card">
+                  <%= link_to monkey_path(my_monkey) do %>
+                    <div class="card-top">
+                      <img class="card-img-top card-image-top" src="<%= my_monkey.picture %>" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-text"><%= my_monkey.name %></h5>
+                    </div>
+                  <% end %>
+                  <div class="card-footer d-flex justify-content-around p-0">
+                    <div class="card-footer-edit">
+                      <%= link_to edit_monkey_path(my_monkey) do%>
+                          <p class="card-text"><i class="far fa-edit"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="card-footer-delete">
+                      <%= link_to monkey_path(my_monkey), method: :delete do%>
+                        <p class="card-text"><i class="fas fa-trash-alt"></i></p>
+                      <% end %>
+                    </div>
+                  </div>
+
+                  <% if my_monkey.bookings.count > 0 %>
+                    <div class="card-footer card-footer-booking">
+                    <small class="text-muted">Next booking : <%= my_monkey.bookings.last.checkin %></small>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    <% else %>
+      <p>You don't have any monkeys ! </p>
+      <p><%= link_to "Start to add one", new_monkey_path, class: 'btn btn-info' %></p>
     <% end %>
-  </ul>
-
-<h2> Next Bookings </h2>
-
-<% if @number_of_bookings != 0 %>
-  <p>Your next bookings are :</p>
-  <ul>
-      <% current_user.bookings.each do |my_booking| %>
-      <li>
-          Renter: <%= my_booking.user.first_name %>
-      </li>
-      <% end %>
-    </ul>
-<% else %>
-  <p>You don't have any reservation. Start to plan some. <%= link_to root_path %></p>
-<% end %>
 
 
 
+  <h2 class='p-3 border-top' > Your Bookings </h2>
+  <% if @number_of_bookings != 0 %>
+        <% current_user.bookings.each do |my_booking| %>
 
+          <div class="card-booking d-flex justify-content-between align-items-center">
+            <div class="card-booking-left">
+              <img src="<%= my_booking.monkey.picture %>">
+              <div class="card-booking-infos">
+                <h3><%= my_booking.monkey.name %></h3>
+                <p><%= my_booking.monkey.speciality %></h6>
+              </div>
+            </div>
+            <div class="card-booking-right">
+              <h3><%= my_booking.monkey.price %> € /day </h3>
+              <p>Booking from <%= my_booking.checkin %> to <%= my_booking.checkout %></p>
+            </div>
+
+              <div class="card-righter d-flex justify-content-around p-0">
+                <div class="card-righter-delete">
+                  <%= link_to booking_path(my_booking), method: :delete do%>
+                    <p class="card-text"><i class="fas fa-trash-alt"></i></p>
+                  <% end %>
+                </div>
+              </div>
+
+          </div>
+        <% end %>
+     </div>
+  <% else %>
+    <p>You don't have any reservation ! </p>
+    <p><%= link_to "Start to rent a monkey !",monkeys_path, class: 'btn btn-info' %></p>
+  <% end %>
+
+</div>
+</div>

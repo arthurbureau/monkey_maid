@@ -45,6 +45,10 @@
   color: #3b302a;
 }
 
+.main_title > a:hover {
+  color: #76a21e;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -59,11 +63,20 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px 5px;
+  &:hover {
+  color: #76a21e;
+  }
+
 }
 
-h1 {
+h1, h2 {
   font-family: 'Permanent marker', cursive;
   text-align: center;
+
+}
+
+p {
+   color: #3b302a;
 }
 
 .footer {
@@ -92,4 +105,13 @@ h1 {
 .footer .fa-heart {
   color: #D23333;
 }
+
+.main-container {
+  display: flex;
+}
+
+.card-monkey {
+  flex-grow: 1;
+}
+
 

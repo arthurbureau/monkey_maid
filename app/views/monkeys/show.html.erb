@@ -1,11 +1,30 @@
-<h1><%= @monkey.name %></h1>
+<div class="image-background-show">
 
-<%= cl_image_tag @monkey.picture, height: 300, width: 400, crop: :fill %>
+<div class="container p-3 justify-content-center">
 
+<h1 class="text-white"><%= @monkey.name %></h1>
+
+
+  <div class="row justify-content-center">
+  <div class="col-4 p-3 m-3 bg-light">
+      <div class="d-flex justify-content-center">
+        <%= cl_image_tag @monkey.picture, height: 250, width: 250, crop: :fill %>
+      </div>
+      <br>
 <p>Speciality : <%= @monkey.speciality %></p>
 <p>Description : <%= @monkey.description %></p>
-<p>Price : <%= @monkey.price %> € / jour</p>
+<p>Address : <%= @monkey.address %></p>
+<p>Price : <%= @monkey.price %> € / day</p>
 <p>Owner : <%= @monkey.user.first_name%></p>
 
-<%= link_to "Réservez ce singe !", new_monkey_booking_path(@monkey), class: "btn btn-primary" %>
+<%= link_to "Book this Monkey !", new_monkey_booking_path(@monkey), class: "btn btn-success btn-lg btn-block" %>
 
+
+<%= link_to "Delete this Monkey !", monkey_path(@monkey), method: :delete, class: "btn btn-danger btn-lg btn-block" %>
+
+
+</div>
+</div>
+</div>
+
+</div>

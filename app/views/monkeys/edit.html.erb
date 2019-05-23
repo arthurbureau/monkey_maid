@@ -5,19 +5,20 @@
   <div class="row justify-content-center">
   <div class="col-4 p-3 m-3 bg-light">
 
-  <h2>Add a new monkey</h2>
+  <h2>Update your monkey</h2>
 
   <%= simple_form_for @monkey do |f| %>
+
     <%= f.input :name%>
     <%= f.input :speciality, collection: Monkey::SPECIALITY%> <!-- ajouter liste déroulante -->
     <%= f.input :description %>
     <%= f.input :address%>
     <%= f.input :price%>
-    <%= f.input :picture%>
+    <%= f.input :picture %>
     <%= f.input :picture_cache, as: :hidden %>
     <br>
 
-    <%= f.button :submit, "Add a Monkey!", class: "btn btn-success btn-lg btn-block"%>
+    <%= f.button :submit, "Edit a Monkey!", class: "btn btn-success btn-lg btn-block"%>
   <% end %>
   </div>
   </div>

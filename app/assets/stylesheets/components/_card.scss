@@ -1,8 +1,17 @@
 .card-monkey {
+  position: relative;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px 0;
+}
+
+.link-monkey{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .card-monkey > img {
@@ -38,3 +47,115 @@
   top: -20px;
   width: 40px;
 }
+
+.card {
+  margin: 10px;
+}
+
+.card-image-top {
+  height: 150px;
+  object-fit: cover;
+  background-position: center;
+}
+
+.card-booking {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.card-booking img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-booking h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-booking p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-booking .card-booking-infos {
+  padding: 32px;
+}
+
+.card-booking-left {
+  display: flex;
+  align-items: center;
+}
+
+.card-booking-right {
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: #d2c8c8;
+  }
+}
+
+// .card-text:hover {
+//   color: red;
+// }
+
+.card-footer-edit {
+  width: 100%;
+  // background-color: red;
+  padding: 10px;
+  &:hover {
+    background-color: #bae2be;
+  }
+}
+
+.card-footer-delete {
+  width: 100%;
+  padding: 10px;
+  &:hover {
+    background-color: rgba(192,0,0, 0.3);
+    // background-color: #ffa06f;
+  }
+}
+
+.card-footer-booking {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  &:hover {
+    background-color: rgba(252,182,53,0.5);
+
+  }
+}
+
+.card-righter-delete {
+  height: 120px;
+  padding: 46px;
+  &:hover {
+    background-color: rgba(192,0,0, 0.3);
+    // background-color: #ffa06f;
+  }
+}
+
+.card-righter {
+  height: 120px;
+  padding: 46px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+

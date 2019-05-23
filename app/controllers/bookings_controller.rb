@@ -15,10 +15,42 @@ class BookingsController < ApplicationController
     @booking.monkey = @monkey
 
     if @booking.save
+      flash[:notice] = "Yay! 🎉 you have successfully rent a monkey."
       redirect_to profile_path
       # Ajouter une alerte pour confirmer que le booking est ajoute
     else
       render :new
+    end
+  end
+
+  # def edit
+  #   @booking = Booking.find(params[:id])
+  #   if current_user == @booking.user
+  #   else
+  #     flash[:alert] = "Sorry, you are not authorized to modified the booking"
+  #     redirect_to monkeys_path
+  #   end
+  # end
+
+  # def update
+  #   @booking = Booking.find(params[:id])
+  #   if @booking.update(set_booking_params)
+  #     flash[:notice] = "Yay! 🎉 you have successfully udpate your booking."
+  #     redirect_to profile_path
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    if current_user == @booking.user
+      @booking.destroy
+      flash[:alert] = "Congrats, you have deleted the booking"
+      redirect_to profile_path
+    else
+      flash[:alert] = "Sorry, you are not authorized to modified the booking"
+      redirect_to monkey_path(@monkey)
     end
   end
 
