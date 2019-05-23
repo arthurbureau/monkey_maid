@@ -1,0 +1,13 @@
+<div class="card-monkey">
+        <%= link_to "", monkey_path(monkey), class: "link-monkey" %>
+        <%= cl_image_tag monkey.picture %>
+        <div class="card-monkey-infos">
+          <div>
+            <h2><%= monkey.name %></h2>
+            <p><%= monkey.speciality %></p>
+          </div>
+          <h2 class="card-monkey-pricing"><%= monkey.price %> €</h2>
+          <img src='<%= monkey.user.avatar %>' class="card-monkey-user avatar-bordered"/>
+        </div>
+</div>
+
