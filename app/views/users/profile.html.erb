@@ -13,14 +13,29 @@
             <div class="col-3">
               <div class="card-group mb-3">
                 <div class="card">
-                  <div class="card-top">
-                    <img class="card-img-top card-image-top" src="<%= my_monkey.picture %>" alt="Card image cap">
+                  <%= link_to monkey_path(my_monkey) do %>
+                    <div class="card-top">
+                      <img class="card-img-top card-image-top" src="<%= my_monkey.picture %>" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-text"><%= my_monkey.name %></h5>
+                    </div>
+                  <% end %>
+                  <div class="card-footer d-flex justify-content-around p-0">
+                    <div class="card-footer-edit">
+                      <%= link_to edit_monkey_path(my_monkey) do%>
+                          <p class="card-text"><i class="far fa-edit"></i></p>
+                      <% end %>
+                    </div>
+                    <div class="card-footer-delete">
+                      <%= link_to monkey_path(my_monkey), method: :delete do%>
+                        <p class="card-text"><i class="fas fa-trash-alt"></i></p>
+                      <% end %>
+                    </div>
                   </div>
-                  <div class="card-body">
-                    <h5 class="card-text"><%= my_monkey.name %></h5>
-                  </div>
+
                   <% if my_monkey.bookings.count > 0 %>
-                    <div class="card-footer">
+                    <div class="card-footer card-footer-booking">
                     <small class="text-muted">Next booking : <%= my_monkey.bookings.last.checkin %></small>
                     </div>
                   <% end %>

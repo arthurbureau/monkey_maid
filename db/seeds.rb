@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Start of seed !!"
 
 Booking.destroy_all
 Monkey.destroy_all
@@ -98,8 +99,17 @@ monkey13.save
 monkey14.save
 monkey15.save
 
-booking1 = Booking.create(monkey: monkey10, user: user_renter1, checkin: Date.current - 2, checkout: Date.current, status: 2)
-booking2 = Booking.create(monkey: monkey1, user: user_renter1, checkin: Date.current - 2, checkout: Date.current, status: 2)
-booking3 = Booking.create(monkey: monkey5, user: user_renter2, checkin: Date.current - 2, checkout: Date.current, status: 2)
-booking4 = Booking.create(monkey: monkey6, user: user_renter2, checkin: Date.current - 2, checkout: Date.current, status: 2)
-booking5 = Booking.create(monkey: monkey8, user: user_owner1, checkin: Date.current - 2, checkout: Date.current, status: 2)
+
+puts "monkeys done !"
+
+puts "start bookings"
+booking1 = Booking.create!(monkey: monkey10, user: user_renter1, checkin: Date.current, checkout: Date.current + 2, status: 2)
+booking2 = Booking.create!(monkey: monkey1, user: user_renter1, checkin: Date.current, checkout: Date.current + 6, status: 2)
+booking3 = Booking.create!(monkey: monkey5, user: user_renter2, checkin: Date.current, checkout: Date.current + 10, status: 2)
+booking4 = Booking.create!(monkey: monkey6, user: user_renter2, checkin: Date.current, checkout: Date.current + 8, status: 2)
+booking5 = Booking.create!(monkey: monkey8, user: user_owner1, checkin: Date.current, checkout: Date.current + 5, status: 2)
+
+
+puts 'bookings done'
+
+puts 'seed done !'
