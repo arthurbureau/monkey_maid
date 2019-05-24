@@ -1,40 +1,48 @@
+<div class="first-container">
 
 <div class="main-container">
-  <div class="container my-3">
 
-    <h1>Monkeys List</h1>
+  <div class="monkey-scroll container my-3">
 
+    <h1 class="title-monkey-list"><%= link_to "Monkey List", monkeys_path %></h1>
+
+    <%= form_tag monkeys_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a monkey"
+      %>
+    <% end %>
 
     <div class="row">
-    <% @monkeys.each do |monkey| %>
-      <div class="col-4">
-        <div class="card-monkey">
-         <%= link_to "", monkey_path(monkey), class: "link-monkey" %>
-          <%= cl_image_tag monkey.picture %>
-          <div class="card-monkey-infos">
-            <div>
-              <h2><%= monkey.name %></h2>
-              <p><%= monkey.speciality %></p>
+      <% @monkeys.each do |monkey| %>
+        <div class="col-4">
+          <div class="card-monkey">
+           <%= link_to "", monkey_path(monkey), class: "link-monkey" %>
+            <%= cl_image_tag monkey.picture %>
+            <div class="card-monkey-infos">
+              <div>
+                <h2><%= monkey.name %></h2>
+                <p><%= monkey.speciality %></p>
+              </div>
+              <h2 class="card-monkey-pricing"><%= monkey.price %> €</h2>
+              <img src='<%= monkey.user.avatar %>' class="card-monkey-user avatar-bordered"/>
             </div>
-            <h2 class="card-monkey-pricing"><%= monkey.price %> €</h2>
-            <img src='<%= monkey.user.avatar %>' class="card-monkey-user avatar-bordered"/>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
 
   <div
     id="map"
     style="width: 100%;
-    height: 600px;"
+    height: 600px;
+    height: 100%;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 </div>
 
-
-
-
-<%= link_to "Add a monkey !", new_monkey_path, class: "addingmonkey btn btn-success btn-lg btn-block" %>
+  <%= link_to "Add a monkey !", new_monkey_path, class: "addingmonkey btn btn-success btn-lg btn-block" %>
+</div>

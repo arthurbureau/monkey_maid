@@ -3,13 +3,13 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
 import { initMapbox } from '../plugins/init_mapbox';
-import swal from 'sweetalert';
+import "../plugins/flatpickr";
 
 
 initMapbox();
 
 
-
+import swal from 'sweetalert';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 
@@ -35,3 +35,4 @@ MonkeyCardId.forEach( (idSolo) => {
 
   initSweetalert(id, options, callback);
 });
+

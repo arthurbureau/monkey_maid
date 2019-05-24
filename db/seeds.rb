@@ -55,7 +55,7 @@ url15 = 'https://www.funsumatra.com/wp-content/uploads/2014/12/orang-utan-update
 monkey1 = Monkey.new(name: 'Joey', speciality: 'Clown', description: "5 year in Pinder Circus", price: 100, user: user_owner1, address: "Place de la bourse, Bordeaux")
 monkey2 = Monkey.new(name: 'Nana', speciality: 'Nannie', description: "10 years with children! Love cooking cookies", price: 200, user: user_owner2, address: "9 rue des Douves, Bordeaux")
 monkey3 = Monkey.new(name: 'Bob', speciality: 'Singer', description: "Only love singing Bob Marley at the sunset", price: 150, user: user_owner1, address: "Jardin public, Bordeaux")
-monkey4 = Monkey.new(name: 'Johnny', speciality: 'Singer', description: "Celine Dion is her best friend", price: 160, user: user_owner2, address: "Parc rivière, Bordeaux")
+monkey4 = Monkey.new(name: 'Lily', speciality: 'Singer', description: "Celine Dion is her best friend", price: 160, user: user_owner2, address: "Parc rivière, Bordeaux")
 monkey5 = Monkey.new(name: 'Lulu', speciality: 'Chef', description: "Love cooking Pizzas and Banana Split", price: 230, user: user_owner1, address: "40 rue Saint James, Bordeaux")
 monkey6 = Monkey.new(name: 'Kelly', speciality: 'Chef', description: "Vegan friendly", price: 80, user: user_owner2, address: "16 rue de la monnaie, Bordeaux")
 monkey7 = Monkey.new(name: 'BlackB', speciality: 'Killer', description: "King of the jungle", price: 300, user: user_owner1, address: "16 rue léonce motelay, Bordeaux")
@@ -66,7 +66,7 @@ monkey11 = Monkey.new(name: 'Ben', speciality: 'Killer', description: "Dumbledor
 monkey12 = Monkey.new(name: 'DJ Marcel', speciality: 'Singer', description: "Best DJ in Ibiza", price: 50, user: user_owner2, address: "16 Rue de la Benauge, Bordeaux")
 monkey13 = Monkey.new(name: 'Sully', speciality: 'Gardener', description: "One year of experience", price: 10, user: user_owner1, address: "16 cours victor hugo, Bordeaux")
 monkey14 = Monkey.new(name: 'Diego', speciality: 'Killer', description: "Godfather", price: 200, user: user_owner2, address: "16 cours Alsace Lorraine, Bordeaux")
-monkey15 = Monkey.new(name: 'Rene', speciality: 'Nannie', description: "BEst huggies in town", price: 140, user: user_owner1, address: "16 cours de l'intendance, Bordeaux")
+monkey15 = Monkey.new(name: 'Johny', speciality: 'Nannie', description: "His teatcher was Ms. Doubtfire!", price: 140, user: user_owner1, address: "16 cours de l'intendance, Bordeaux")
 
 monkey1.remote_picture_url = url1
 monkey2.remote_picture_url = url2
