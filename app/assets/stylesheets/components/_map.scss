@@ -12,3 +12,62 @@
   text-align: center;
   // font-family: 'Open Sans', sans-serif;
 }
+
+
+
+
+//CARDS FOR MAP
+
+.card-monkey-for-map {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+
+.link-monkey-for-map{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.card-monkey-for-map > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-monkey-for-map h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-monkey-for-map p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-monkey-for-map .card-monkey-infos-for-map {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-monkey-infos-for-map .card-monkey-user-for-map {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+
+
