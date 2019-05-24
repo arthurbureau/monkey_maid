@@ -1,3 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "monkeyform";
+
+
+.addingmonkey {
+  position: sticky;
+  bottom: 0px;
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.monkey-scroll {
+  overflow: scroll;
+}

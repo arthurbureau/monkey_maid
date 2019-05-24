@@ -2,8 +2,18 @@ class MonkeysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @monkeys = Monkey.all
-    @geolocalized_monkeys = Monkey.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      sql_query = " \
+      monkeys.name @@ :query \
+      OR monkeys.speciality @@ :query \
+      OR monkeys.description @@ :query \
+      "
+      @monkeys = Monkey.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @monkeys = Monkey.all
+    end
+
+    @geolocalized_monkeys = @monkeys.where.not(latitude: nil, longitude: nil)
 
     @markers = @geolocalized_monkeys.map do |monkey|
       {
