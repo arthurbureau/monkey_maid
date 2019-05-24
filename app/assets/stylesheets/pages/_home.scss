@@ -117,4 +117,12 @@ p {
   flex-grow: 1;
 }
 
+.title-monkey-list a {
+  font-family: 'Permanent Marker', cursive;
+  text-decoration: none;
+  color: #3b302a;
+  &:hover {
+  color: #76a21e;
+  }
+}
 

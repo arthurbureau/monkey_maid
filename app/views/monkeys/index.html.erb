@@ -2,7 +2,7 @@
 <div class="main-container">
 <div class="container my-3">
 
-  <h1>Monkeys List</h1>
+  <h1 class="title-monkey-list"><%= link_to "Monkey List", monkeys_path %></h1>
 
 <%= form_tag monkeys_path, method: :get do %>
   <%= text_field_tag :query,
