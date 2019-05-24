@@ -1,6 +1,8 @@
 class MonkeysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+
+
     @monkeys = Monkey.all
     @geolocalized_monkeys = Monkey.where.not(latitude: nil, longitude: nil)
 

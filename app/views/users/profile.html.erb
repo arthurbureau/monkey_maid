@@ -28,11 +28,10 @@
                       <% end %>
                     </div>
 
-                  <div class="card-footer-delete" id="alert-delete-monkey">
+                  <div class="card-footer-delete" id="<%= my_monkey.id %> alert-delete-monkey">
                      <i class="fas fa-trash-alt" ></i>
-                      <%= link_to "", monkey_path(my_monkey), method: :delete, id: "delete-link", class: "hidden" %>
                   </div>
-
+                  <%= link_to "", monkey_path(my_monkey), method: :delete, id: "#{my_monkey.id}delete-link", class: "hidden" %>
 
 
 
