@@ -28,14 +28,10 @@
                       <% end %>
                     </div>
 
-                  <div class="card-footer-delete" id="<%= my_monkey.id %> alert-delete-monkey">
-                     <i class="fas fa-trash-alt" ></i>
-                  </div>
-                  <%= link_to "", monkey_path(my_monkey), method: :delete, id: "#{my_monkey.id}delete-link", class: "hidden" %>
-
-
-
-
+                    <div class="card-footer-delete" id="<%= my_monkey.id %> alert-delete-monkey">
+                       <i class="fas fa-trash-alt" ></i>
+                    </div>
+                    <%= link_to "", monkey_path(my_monkey), method: :delete, id: "#{my_monkey.id}delete-link", class: "hidden" %>
                   </div>
 
                   <% if my_monkey.bookings.count > 0 %>
@@ -72,13 +68,15 @@
               <p>Booking from <%= my_booking.checkin %> to <%= my_booking.checkout %></p>
             </div>
 
+
               <div class="card-righter d-flex justify-content-around p-0">
-                <div class="card-righter-delete">
-                  <%= link_to booking_path(my_booking), method: :delete do%>
-                    <p class="card-text"><i class="fas fa-trash-alt"></i></p>
-                  <% end %>
+                <div class="card-righter-delete" id="<%= my_booking.id %> alert-delete-booking">
+                  <i class="fas fa-trash-alt"></i>
                 </div>
+                <%= link_to "", booking_path(my_booking), method: :delete, id: "#{my_booking.id}delete-link-booking", class: "hidden"%>
               </div>
+
+
 
           </div>
         <% end %>

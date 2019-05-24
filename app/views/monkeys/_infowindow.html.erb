@@ -1,13 +1,13 @@
-<div class="card-monkey">
-        <%= link_to "", monkey_path(monkey), class: "link-monkey" %>
+<div class="card-monkey-for-map">
+        <%= link_to "", monkey_path(monkey), class: "link-monkey-for-map" %>
         <%= cl_image_tag monkey.picture %>
-        <div class="card-monkey-infos">
+        <div class="card-monkey-infos-for-map">
           <div>
             <h2><%= monkey.name %></h2>
             <p><%= monkey.speciality %></p>
           </div>
-          <h2 class="card-monkey-pricing"><%= monkey.price %> €</h2>
-          <img src='<%= monkey.user.avatar %>' class="card-monkey-user avatar-bordered"/>
+          <h2 class="card-monkey-pricing-for-map"><%= monkey.price %> €</h2>
+          <img src='<%= monkey.user.avatar %>' class="card-monkey-user-for-map avatar-bordered"/>
         </div>
 </div>
 
