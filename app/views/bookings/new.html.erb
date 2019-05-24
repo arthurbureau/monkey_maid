@@ -12,17 +12,14 @@
     <p>Monkey : <%= @monkey.name  %></p>
     <p>Owner : <%= @monkey.user.first_name  %></p>
 
-    <%= simple_form_for [@monkey, @booking] do |f| %>
+  <%= simple_form_for [@monkey, @booking] do |f| %>
     <br>
-    <%= f.input :checkin%>
+      <%= f.input :checkin, as: :string, required: false, input_html: {class: "datepicker"} %>
     <br>
-    <%= f.input :checkout%>
+      <%= f.input :checkout, as: :string, required: false, input_html: {class: "datepicker"} %>
     <br>
-    <br>
-    <br>
-    <%= f.button :submit, "Book a Monkey!", class: "btn btn-success btn-lg btn-block" %>
-    <br>
-  <% end %>
+      <%= f.button :submit, "Book a Monkey!", class: "btn btn-success btn-lg btn-block" %>
+    <% end %>
 
   </div>
   </div>
